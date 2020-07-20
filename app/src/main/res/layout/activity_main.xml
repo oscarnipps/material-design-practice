@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--data binding items-->
+    <data>
+        <!--util for setting the profile image-->
+        <variable name="imageUtil" type="com.example.materialpractice.util.ImageUtil"/>
+        <!--string helper class for manipulation of integer /float /double values-->
+        <variable name="stringUtil" type="com.example.materialpractice.util.StringUtil"/>
+        <!--for handling events-->
+        <variable name="layoutEventHandler" type="com.example.materialpractice.databindingpractice.LayoutEventHandler" />
+        <!--employee model-->
+        <variable name="employee" type="com.example.materialpractice.databindingpractice.model.Employee"/>
+        <variable name="employeeImage" type="android.widget.ImageView"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databindingpractice.MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchor="@+id/constraintLayout"
+            app:layout_anchorGravity="center">
+
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/employee_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="84dp"
+                android:onClick="@{layoutEventHandler::onButtonClicked}"
+                android:src="@drawable/ic_employee"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:src="@drawable/oscar_picture"/>
+
+
+            <TextView
+                android:id="@+id/department_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="Department"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employee_name" />
+
+            <TextView
+                android:id="@+id/employee_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="136dp"
+                android:text="@{employee.employeeName}"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employee_image"
+                tools:text="doctor strange" />
+
+            <TextView
+                android:id="@+id/annual_pay_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="Annual Pay"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/department_value" />
+
+            <TextView
+                android:id="@+id/annual_pay_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="@{stringUtil.setPay(employee.employeeAnnualPay)}"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/annual_pay_tag"
+                tools:text="N 1400"/>
+
+            <TextView
+                android:id="@+id/department_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/raleway"
+                android:text="-------"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/department_tag" />
+
+            <com.google.android.material.button.MaterialButton
+                android:onClick="@{() -> layoutEventHandler.showEmployeeDialog()}"
+                android:id="@+id/take_employee_image"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="@string/start"
+                app:cornerRadius="18dp"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/annual_pay_value"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:onClick="@{() -> imageUtil.setProfileImage(employeeImage)}"
+                android:id="@+id/show_employee_picture_button"
+                android:backgroundTint="#501919"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="update picture"
+                android:textAllCaps="false"
+                app:cornerRadius="18dp"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintBottom_toTopOf="@+id/employee_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employee_image"
+                app:layout_constraintVertical_bias="0.147" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="56dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

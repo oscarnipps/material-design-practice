@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--data binding items-->
+    <data>
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".databindingpractice.MainActivity">
+
+
+        <ScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    layout="@layout/item_entry"/>
+                <include
+                    layout="@layout/item_entry"/>
+                <include
+                    layout="@layout/item_entry"/>
+
+                <include
+                    layout="@layout/item_entry"/>
+                <include
+                    layout="@layout/item_entry"/>
+                <include
+                    layout="@layout/item_entry"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </ScrollView>
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_anchor="@+id/constraintLayout"
+            app:layout_anchorGravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/employee_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="84dp"
+                android:src="@drawable/ic_employee"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <TextView
+                android:id="@+id/department_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="Department"
+                android:textStyle="bold"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employee_name" />
+
+            <TextView
+                android:id="@+id/employee_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:text="Jonathan James"
+                android:textStyle="bold"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employee_image" />
+
+            <TextView
+                android:id="@+id/annual_pay_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="Location"
+                android:textStyle="bold"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/department_value" />
+
+            <TextView
+                android:id="@+id/annual_pay_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Lagos, Nigeria"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/annual_pay_tag" />
+
+            <TextView
+                android:id="@+id/department_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/raleway"
+                android:text="Finance"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/department_tag" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/take_employee_image"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="@string/start"
+                app:cornerRadius="18dp"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/annual_pay_value"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/update_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="132dp"
+                android:backgroundTint="#501919"
+                android:src="@drawable/ic_take_photo"
+                android:text="update picture"
+                android:textAllCaps="false"
+                app:cornerRadius="18dp"
+                app:fontFamily="@font/raleway"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.662"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/employee_image" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="56dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:visibility="invisible"
+            android:scaleType="centerCrop"
+            android:id="@+id/expanded_employee_image"
+            tools:src="@drawable/oscar_picture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />-->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

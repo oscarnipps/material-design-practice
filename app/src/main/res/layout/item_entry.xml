@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="11dp"
+    android:id="@+id/item_entry"
+    android:layout_marginStart="8dp"
+    app:cardBackgroundColor="#F8F8F8"
+    android:layout_marginEnd="8dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--name of the product-->
+        <TextView
+            android:fontFamily="@font/raleway"
+            android:id="@+id/product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:color="#6E8CA0"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+            android:text="revanictemol family multivitamin syrup 15 "
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--retail price value-->
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/raleway"
+                android:text="Retail Price"
+                android:textAlignment="center"
+                android:textColor="#4c5a68"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                app:layout_constraintVertical_bias="0.58000004" />
+
+
+            <!--facings value-->
+
+            <EditText
+                android:textStyle="bold"
+                android:id="@+id/retail_price_text_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/raleway"
+                android:hint="25,000"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textColor="#79E29F"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/unit_text_val"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway"
+                android:text="Facings"
+                android:textAlignment="center"
+                android:textColor="#4c5a68"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:textStyle="bold"
+                android:fontFamily="@font/raleway"
+                android:id="@+id/facing_text_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:hint="18"
+                android:textAlignment="center"
+                android:textColor="#846e6e"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--units price-->
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/raleway"
+                android:text="Units"
+                android:textAlignment="center"
+                android:textColor="#4c5a68"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <EditText
+                android:padding="8dp"
+                android:fontFamily="@font/raleway"
+                android:id="@+id/unit_text_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="4dp"
+                android:hint="18"
+                android:textAlignment="center"
+                android:textColor="#846e6e"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/facing_text_val" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:fontFamily="@font/raleway"
+            android:padding="0dp"
+            android:text="add to shelf"
+            android:background="#921717"
+            app:backgroundTint="#921717"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!--<com.google.android.material.button.MaterialButton
+            style="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:fontFamily="@font/raleway"
+            android:padding="0dp"
+            android:text="added"
+            app:backgroundTint="#40B143"
+            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
