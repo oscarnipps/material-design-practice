@@ -1,0 +1,162 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:background="#838080"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/appBarLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center"
+                    android:layout_width="379dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageButton
+                        android:id="@+id/cancelBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_back"
+                        android:tint="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/nameToolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:text="Schedules"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/raleway"
+                        android:textSize="20sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="#0E0E0E" />
+
+                    <ImageButton
+                        android:id="@+id/editBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_schedule_calendar"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/moreBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_add_red"
+                        />
+                </LinearLayout>
+
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:background="@drawable/bg_bootomsheet"
+                android:id="@+id/bottomSheet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:behavior_hideable="false"
+                app:behavior_peekHeight="150dp"
+                app:layout_behavior="@string/bottom_sheet_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="32dp"
+                            android:layout_height="2dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="#B1AEAE"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--empty schedules layout-->
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/empty_schedule_bottomsheet"
+                        android:background="#dadada"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:textColor="#2B2727"
+                            android:fontFamily="@font/raleway"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="No visit schedules set for today "/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/total_schedules"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#2B2727"
+                        android:fontFamily="@font/raleway"
+                        android:textStyle="bold"
+                        android:layout_marginStart="24dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="6 Scheduled Visits"/>
+
+                    <!-- schedules list-->
+                    <!--<androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/schedule_list_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>-->
+                    <include layout="@layout/schedule_item" />
+                    <include layout="@layout/schedule_item" />
+                    <include layout="@layout/schedule_item" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:layout_margin="16dp"
+            app:elevation="24dp"
+            android:layout_gravity="bottom|right"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

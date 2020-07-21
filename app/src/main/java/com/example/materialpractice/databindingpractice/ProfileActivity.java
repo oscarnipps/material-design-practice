@@ -21,34 +21,22 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.materialpractice.R;
+import com.example.materialpractice.databinding.ActivityProfileBinding;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
+
     ActivityProfileBinding mProfileBinding;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private Animator currentAnimator;
     private int shortAnimationDuration;
-    /*
-    * get the image from the intent
-    **/
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageCaptured = (Bitmap) extras.get("data");
-            mProfileBinding.employeeImage.setImageBitmap(imageCaptured);
-            Toast.makeText(this, "profile updated", Toast.LENGTH_SHORT).show();
-
-
-        }
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         mProfileBinding = DataBindingUtil.setContentView(this , R.layout.activity_profile);
 
         mProfileBinding.updateImage.setOnClickListener(new View.OnClickListener() {
@@ -65,14 +53,29 @@ public class ProfileActivity extends AppCompatActivity {
 
         mProfileBinding.employeeImage.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                zoomImageFromThumb(mProfileBinding.employeeImage , mProfileBinding.employeeImage.getDrawable());
+            public void onClick(View view) { zoomImageFromThumb(mProfileBinding.employeeImage , mProfileBinding.employeeImage.getDrawable());
             }
         });
 
         // Retrieve and cache the system's default "short" animation time.
-        shortAnimationDuration = getResources().getInteger(
-                android.R.integer.config_shortAnimTime);
+        shortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
+    }
+
+    /*
+     * get the image from the intent
+     **/
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageCaptured = (Bitmap) extras.get("data");
+            mProfileBinding.employeeImage.setImageBitmap(imageCaptured);
+            Toast.makeText(this, "profile updated", Toast.LENGTH_SHORT).show();
+
+
+        }
+
     }
 
     private void zoomImageFromThumb(final CircleImageView thumbView, Drawable imageResId) {
