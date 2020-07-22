@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         app:cardBackgroundColor="#ffffff"
@@ -16,7 +18,7 @@
             android:layout_marginEnd="4dp"
             android:layout_marginStart="4dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -114,8 +116,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 
+            <!--container showing more schedule details when expanded-->
             <androidx.constraintlayout.widget.ConstraintLayout
-
+                android:visibility="gone"
                 android:id="@+id/constraintLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
