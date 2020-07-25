@@ -20,16 +20,20 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-
         <activity
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".searchviewpractice.SearchActivity">
-
+            android:name=".dialogpractice.DialogPracticeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".searchviewpractice.SearchActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         </activity>
 
@@ -52,13 +56,8 @@
 
         <activity
             android:name=".databindingpractice.EmployeeProfileActivity"
-            android:theme="@style/CustomNoActionBar">
-
-        </activity>
-
+            android:theme="@style/CustomNoActionBar"></activity>
         <activity android:name=".databindingpractice.ProfileActivity" />
-
-
         <activity
             android:name=".collapsingtoolbarpractice.SecondPracticeActivity"
             android:parentActivityName=".collapsingtoolbarpractice.PracticeActivity"
@@ -67,16 +66,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".collapsingtoolbarpractice.PracticeActivity" />
         </activity>
-
-
         <activity
             android:name=".collapsingtoolbarpractice.PracticeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
-
         <activity android:name=".databindingpractice.EmployeeActivity" />
-
-
         <activity
             android:name=".databindingpractice.MainActivity"
             android:label="@string/title" />
@@ -84,8 +77,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>
