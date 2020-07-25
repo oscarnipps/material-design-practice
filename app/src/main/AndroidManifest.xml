@@ -19,15 +19,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+
+
         <activity
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".bottomsheetpractice.BottomSheetActivity">
+            android:name=".searchviewpractice.SearchActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
+        <activity
+            android:name=".bottomsheetpractice.BottomSheetActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
+
         <!-- provider for the media files i.e images -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -43,7 +55,10 @@
             android:theme="@style/CustomNoActionBar">
 
         </activity>
-        <activity android:name=".databindingpractice.ProfileActivity"></activity>
+
+        <activity android:name=".databindingpractice.ProfileActivity" />
+
+
         <activity
             android:name=".collapsingtoolbarpractice.SecondPracticeActivity"
             android:parentActivityName=".collapsingtoolbarpractice.PracticeActivity"
@@ -52,17 +67,25 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".collapsingtoolbarpractice.PracticeActivity" />
         </activity>
+
+
         <activity
             android:name=".collapsingtoolbarpractice.PracticeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
         <activity android:name=".databindingpractice.EmployeeActivity" />
+
+
         <activity
             android:name=".databindingpractice.MainActivity"
-            android:label="@string/title"></activity>
+            android:label="@string/title" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+
     </application>
 
 </manifest>

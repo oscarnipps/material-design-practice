@@ -16,7 +16,9 @@ import android.widget.Toast;
 import com.example.materialpractice.R;
 import com.example.materialpractice.databinding.ActivityBottomSheetBinding;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
 public class BottomSheetActivity extends AppCompatActivity {
     public static final String TAG = BottomSheetActivity.class.getSimpleName();
@@ -26,6 +28,7 @@ public class BottomSheetActivity extends AppCompatActivity {
     View popupView;
     TextView selectedCalendarDate;
     MaterialCalendarView materialCalendarView;
+    String selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,12 @@ public class BottomSheetActivity extends AppCompatActivity {
 
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetBinding.bottomSheet);
 
+
         popupView = LayoutInflater.from(this).inflate(R.layout.schedule_calendar_popup, null);
+
+        materialCalendarView = popupView.findViewById(R.id.dialog_calendar);
+
+
         selectedCalendarDate = popupView.findViewById(R.id.selected_calendar_date);
 
         bottomSheetBehavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
@@ -49,6 +57,10 @@ public class BottomSheetActivity extends AppCompatActivity {
                         bottomSheetBinding.bottomSheetIndicatorView.setVisibility(View.GONE);
                         bottomSheetBinding.scheduleDate.setVisibility(View.VISIBLE);
                         bottomSheetBinding.scheduledVisitToolbar.setVisibility(View.VISIBLE);
+                        break;
+
+                    case BottomSheetBehavior.STATE_DRAGGING:
+                        bottomSheetBinding.scheduledVisitToolbar.setVisibility(View.GONE);
                         break;
 
                     case BottomSheetBehavior.STATE_COLLAPSED:
@@ -68,6 +80,14 @@ public class BottomSheetActivity extends AppCompatActivity {
             }
         });
 
+        materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+                selectedDate = String.valueOf (date.getDay());
+                bottomSheetBinding.totalSchedules.setText(selectedDate);
+            }
+        });
+
         bottomSheetBinding.viewCalendar.setOnClickListener(v ->{
             showCalendarPopUp();
         });
@@ -82,11 +102,8 @@ public class BottomSheetActivity extends AppCompatActivity {
         boolean focusable = true;
         popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        // show the popup window , which view you pass in doesn't matter, it is only used for the window tolken
-        popupWindow.showAtLocation(bottomSheetBinding.getRoot(), Gravity.CENTER_VERTICAL, 0, -100);
-
-        //close the pop up window when the cancel button is clicked
-        /*closePaymentPopUp.setOnClickListener(v -> popupWindow.dismiss());*/
+        // show the popup window
+        popupWindow.showAtLocation(bottomSheetBinding.getRoot(), Gravity.CENTER_VERTICAL, 0, -110);
 
         // dismiss the popup window when touched
         popupView.setOnTouchListener((v, event) -> {

@@ -17,6 +17,8 @@
             android:background="@android:color/transparent">
 
             <androidx.appcompat.widget.Toolbar
+                android:background="@drawable/bg_appbar"
+                app:navigationIcon="@drawable/ic_schedule_calendar"
                 android:contentInsetLeft="0dp"
                 android:contentInsetStart="0dp"
                 app:contentInsetLeft="0dp"
@@ -75,25 +77,10 @@
                         android:layout_marginBottom="16dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:foregroundGravity="right"
-                        android:src="@drawable/ic_add_red"
+                        android:src="@drawable/ic_schedule_activity"
+                        android:tint="#FB0B1C"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <ImageButton
-                        android:id="@+id/close_schedules"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:foregroundGravity="right"
-                        android:src="@drawable/ic_back"
-                        android:tint="#B30707"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

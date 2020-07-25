@@ -67,7 +67,7 @@
 
         <com.prolificinteractive.materialcalendarview.MaterialCalendarView
 
-            android:id="@+id/material_calendar_vew"
+            android:id="@+id/dialog_calendar"
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:padding="16dp"
