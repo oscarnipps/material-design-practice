@@ -40,24 +40,19 @@
 
     <style name="ToolbarCustomFontStyle" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:layout_width">379dp</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#E30E0E</item>
     </style>
 
-    <style name="FullScreenDialogStyle" parent="@style/Base.Theme.AppCompat.Light.Dialog">
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorPrimary">@color/colorPrimary</item>
 
         <!-- Set this to true if you want Full Screen without status bar -->
         <item name="android:windowFullscreen">false</item>
-
         <item name="android:windowIsFloating">false</item>
-
-
         <!-- This is important! Don't forget to set window background -->
         <item name="android:windowBackground">@color/colorAccent</item>
 

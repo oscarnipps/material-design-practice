@@ -6,6 +6,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
+import android.widget.Toast;
 
 import com.example.materialpractice.R;
 import com.example.materialpractice.databinding.ActivityDialogPracticeBinding;
@@ -29,5 +34,72 @@ public class DialogPracticeActivity extends AppCompatActivity {
             DialogPracticeFragment dialogPracticeFragment = DialogPracticeFragment.getInstance();
             dialogPracticeFragment.show(getSupportFragmentManager() ,"location_dialog_fragment");
         });
+
+       /* dialogPracticeBinding.showMenu.setOnClickListener(this);
+        dialogPracticeBinding.showAmountMenu.setOnClickListener(this);*/
+        registerForContextMenu(dialogPracticeBinding.showMenu);
+        /*registerForContextMenu(dialogPracticeBinding.showAmountMenu);*/
+    }
+
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+     /*   if (v.getId() == R.id.show_menu) {
+            menu.setHeaderTitle("select channel");
+            menu.add(0, 1, 0, "kiosk channel");
+            menu.add(0, 2, 0, "shop channel");
+            menu.add(0, 3, 0, "sales channel");
+
+            return;
+        }
+*/
+
+      /*  menu.setHeaderTitle("select amount");
+        menu.add(0, 1, 0, "13,000");
+        menu.add(0, 2, 0, "3,000");
+        menu.add(0, 3, 0, "8,000");*/
+
+        menu.setHeaderTitle("select channel");
+        menu.add(0, 1, 0, "kiosk channel");
+        menu.add(0, 2, 0, "shop channel");
+        menu.add(0, 3, 0, "sales channel");
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case 1 :
+                Toast.makeText(this, item.getTitle() + " was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case 2 :
+                Toast.makeText(this, item.getTitle() + " clicked", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                Toast.makeText(this, item.getTitle() + " clicked", Toast.LENGTH_SHORT).show();
+        }
+
+        return false;
+
+    }
+
+
+    public void showMenuPopUp(View view) {
+        PopupMenu popupMenu = new PopupMenu(this,dialogPracticeBinding.showAmountMenu);
+        popupMenu.getMenu().add(0, 1, 0, "kiosk");
+        popupMenu.getMenu().add(0, 2, 0, "shop");
+        popupMenu.getMenu().add(0, 3, 0, "sales");
+        popupMenu.getMenuInflater().inflate(R.menu.practice_menu,popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Toast.makeText(DialogPracticeActivity.this, "pop up menu clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+        popupMenu.show();
     }
 }

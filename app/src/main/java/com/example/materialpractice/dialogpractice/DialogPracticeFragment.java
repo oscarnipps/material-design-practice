@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -76,11 +77,11 @@ public class DialogPracticeFragment extends DialogFragment {
         v.setBackgroundColor(getResources().getColor(R.color.color_toolbar));
 
         //use a custom close icon in the search view
-        ImageView searchCloseIcon = (ImageView)searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+        ImageView searchCloseIcon = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
         searchCloseIcon.setImageResource(R.drawable.ic_search_close);
 
         // get the edit text element from the searchView and set custom font and color changes
-        EditText searchEditText = (EditText) searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+        TextView searchEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
         searchEditText.setTextColor(getResources().getColor(R.color.colorAccent));
         searchEditText.setHintTextColor(getResources().getColor(R.color.colorAccent));
         Typeface typeface = ResourcesCompat.getFont(requireContext(),R.font.raleway);
@@ -88,10 +89,11 @@ public class DialogPracticeFragment extends DialogFragment {
 
 
         searchView.setQueryHint("search items");
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                return false;
+                return true;
             }
 
             @Override
