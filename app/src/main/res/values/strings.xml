@@ -3,4 +3,5 @@
     <string name="start">show</string>
     <string name="title">Profile</string>
     <string name="employee_list">Employee List</string>
+    <string name="focus_changed_text">focus changed</string>
 </resources>

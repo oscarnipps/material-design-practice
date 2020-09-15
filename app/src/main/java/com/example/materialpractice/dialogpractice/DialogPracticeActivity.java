@@ -35,31 +35,14 @@ public class DialogPracticeActivity extends AppCompatActivity {
             dialogPracticeFragment.show(getSupportFragmentManager() ,"location_dialog_fragment");
         });
 
-       /* dialogPracticeBinding.showMenu.setOnClickListener(this);
-        dialogPracticeBinding.showAmountMenu.setOnClickListener(this);*/
         registerForContextMenu(dialogPracticeBinding.showMenu);
-        /*registerForContextMenu(dialogPracticeBinding.showAmountMenu);*/
+
     }
 
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-
-     /*   if (v.getId() == R.id.show_menu) {
-            menu.setHeaderTitle("select channel");
-            menu.add(0, 1, 0, "kiosk channel");
-            menu.add(0, 2, 0, "shop channel");
-            menu.add(0, 3, 0, "sales channel");
-
-            return;
-        }
-*/
-
-      /*  menu.setHeaderTitle("select amount");
-        menu.add(0, 1, 0, "13,000");
-        menu.add(0, 2, 0, "3,000");
-        menu.add(0, 3, 0, "8,000");*/
 
         menu.setHeaderTitle("select channel");
         menu.add(0, 1, 0, "kiosk channel");

@@ -19,10 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
-        <activity
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:name=".dialogpractice.DialogPracticeActivity">
+        <activity android:name=".progressbarpractice.CircularProgressBarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,21 +27,17 @@
             </intent-filter>
         </activity>
 
-
+        <activity android:name=".inputfieldspractice.InputFieldsActivity">
+        </activity>
+        <activity
+            android:name=".dialogpractice.DialogPracticeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".searchviewpractice.SearchActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-
-
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".bottomsheetpractice.BottomSheetActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
-
-        <!-- provider for the media files i.e images -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/> <!-- provider for the media files i.e images -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -56,7 +49,7 @@
 
         <activity
             android:name=".databindingpractice.EmployeeProfileActivity"
-            android:theme="@style/CustomNoActionBar"></activity>
+            android:theme="@style/CustomNoActionBar" />
         <activity android:name=".databindingpractice.ProfileActivity" />
         <activity
             android:name=".collapsingtoolbarpractice.SecondPracticeActivity"
