@@ -6,7 +6,7 @@
     <data>
         <variable
             name="employee"
-            type="com.example.materialpractice.databindingpractice.model.Employee" />
+            type="com.example.materialpractice.databindingpractice.Employee" />
     </data>
 
 

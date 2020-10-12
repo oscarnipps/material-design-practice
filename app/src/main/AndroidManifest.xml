@@ -19,25 +19,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".progressbarpractice.CircularProgressBarActivity">
+        <activity
+            android:theme="@style/CustomNoActionBar"
+            android:name=".recyclerviewpractice.RecyclerViewActivity"/>
+        <activity
+            android:name=".EntryActivity"
+            android:theme="@style/CustomNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".inputfieldspractice.InputFieldsActivity">
-        </activity>
+        <activity android:name=".progressbarpractice.CircularProgressBarActivity"/>
+        <activity android:name=".inputfieldspractice.InputFieldsActivity" />
         <activity
             android:name=".dialogpractice.DialogPracticeActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".searchviewpractice.SearchActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".bottomsheetpractice.BottomSheetActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/> <!-- provider for the media files i.e images -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- provider for the media files i.e images -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -47,10 +51,6 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity
-            android:name=".databindingpractice.EmployeeProfileActivity"
-            android:theme="@style/CustomNoActionBar" />
-        <activity android:name=".databindingpractice.ProfileActivity" />
         <activity
             android:name=".collapsingtoolbarpractice.SecondPracticeActivity"
             android:parentActivityName=".collapsingtoolbarpractice.PracticeActivity"
@@ -62,7 +62,6 @@
         <activity
             android:name=".collapsingtoolbarpractice.PracticeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".databindingpractice.EmployeeActivity" />
         <activity
             android:name=".databindingpractice.MainActivity"
             android:label="@string/title" />

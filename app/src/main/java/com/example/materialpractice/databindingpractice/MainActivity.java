@@ -5,10 +5,7 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 
 import com.example.materialpractice.R;
-import com.example.materialpractice.databindingpractice.EmployeeDialog;
-import com.example.materialpractice.databindingpractice.LayoutEventHandler;
 import com.example.materialpractice.databinding.ActivityMainBinding;
-import com.example.materialpractice.databindingpractice.model.Employee;
 import com.example.materialpractice.util.ImageUtil;
 import com.example.materialpractice.util.StringUtil;
 

@@ -1,4 +1,4 @@
-package com.example.materialpractice.databindingpractice.model;
+package com.example.materialpractice.databindingpractice;
 
 public class Employee {
 

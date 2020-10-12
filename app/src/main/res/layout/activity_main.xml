@@ -12,7 +12,7 @@
         <!--for handling events-->
         <variable name="layoutEventHandler" type="com.example.materialpractice.databindingpractice.LayoutEventHandler" />
         <!--employee model-->
-        <variable name="employee" type="com.example.materialpractice.databindingpractice.model.Employee"/>
+        <variable name="employee" type="com.example.materialpractice.databindingpractice.Employee"/>
         <variable name="employeeImage" type="android.widget.ImageView"/>
     </data>
 

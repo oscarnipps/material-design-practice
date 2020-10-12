@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openRecyclerViewDemo"
+            android:padding="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="recycler view demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openProgressBarDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="progress bar demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openInputFieldsDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="input fields demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openDialogsDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dialogs demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openDataBindingDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="data binding  demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openSearchViewDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search view demo"
+            android:layout_gravity="center"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openCollapsingToolbarDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="collapsing toolbar demo"
+            android:layout_gravity="center"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:onClick="openBottomSheetsDemo"
+            android:padding="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="bottom sheet demo"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

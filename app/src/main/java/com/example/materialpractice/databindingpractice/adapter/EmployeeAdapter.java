@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.materialpractice.R;
 import com.example.materialpractice.databinding.EmployeeListItemBinding;
-import com.example.materialpractice.databinding.EmployeeListItemBinding;
-import com.example.materialpractice.databindingpractice.model.Employee;
+import com.example.materialpractice.databindingpractice.Employee;
 
 import java.util.List;
 
