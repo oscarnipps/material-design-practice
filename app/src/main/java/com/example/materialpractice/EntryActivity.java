@@ -12,7 +12,7 @@ import com.example.materialpractice.databindingpractice.MainActivity;
 import com.example.materialpractice.dialogpractice.DialogPracticeActivity;
 import com.example.materialpractice.inputfieldspractice.InputFieldsActivity;
 import com.example.materialpractice.progressbarpractice.CircularProgressBarActivity;
-import com.example.materialpractice.recyclerviewpractice.RecyclerViewActivity;
+import com.example.materialpractice.recyclerviewpractice.RecyclerViewEntryActivity;
 import com.example.materialpractice.searchviewpractice.SearchActivity;
 
 public class EntryActivity extends AppCompatActivity {
@@ -23,9 +23,8 @@ public class EntryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entry);
     }
 
-
     public void openRecyclerViewDemo(View view) {
-        Intent intent = new Intent(this , RecyclerViewActivity.class);
+        Intent intent = new Intent(this , RecyclerViewEntryActivity.class);
         startActivity(intent);
     }
 

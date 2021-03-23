@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="#474444"
+        android:layout_height="match_parent"
+        tools:context=".recyclerviewpractice.RecyclerViewEntryActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textAllCaps="true"
+                android:layout_margin="16dp"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:fontFamily="@font/montserrat"
+                android:textColor="#ffffff"
+                android:text="RecyclerView Practice Demo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/with_collapsible_card"
+                android:onClick="recyclerViewDemo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="with collapsible card item"
+                android:layout_gravity="center"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/with_checkbox_and_edit_text"
+                android:onClick="recyclerViewDemo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="with checkbox and edit text"
+                android:layout_gravity="center"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/with_images_and_data_binding"
+                android:onClick="recyclerViewDemo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="with images and data binding"
+                android:layout_gravity="center"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/with_diff_util"
+                android:onClick="recyclerViewDemo"
+                android:padding="8dp"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="using diff util (for optimisation)"
+                android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

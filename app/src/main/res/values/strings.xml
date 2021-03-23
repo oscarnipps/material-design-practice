@@ -4,4 +4,6 @@
     <string name="title">Profile</string>
     <string name="employee_list">Employee List</string>
     <string name="focus_changed_text">focus changed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

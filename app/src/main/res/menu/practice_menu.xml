@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
- <!--   <item
+    <item
+        android:id="@+id/kiosk"
         android:title="kiosk"
-        android:icon="@drawable/ic_add"
         app:showAsAction="never"
         />
     <item
+        android:id="@+id/shops"
         android:title="shops"
-        android:icon="@drawable/ic_add"
         app:showAsAction="never"
         />
     <item
+        android:id="@+id/amount"
         android:title="amount"
-        android:icon="@drawable/ic_add"
         app:showAsAction="never"
-        />-->
+        />
 </menu>

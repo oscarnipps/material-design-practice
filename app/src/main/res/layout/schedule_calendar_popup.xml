@@ -40,7 +40,7 @@
                 android:padding="10dp"
                 android:src="@drawable/ic_add"
                 android:textAlignment="textEnd"
-                android:tint="#ffffff"
+                app:tint="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

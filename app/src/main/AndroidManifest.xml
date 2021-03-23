@@ -20,8 +20,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:theme="@style/CustomNoActionBar"
-            android:name=".recyclerviewpractice.RecyclerViewActivity"/>
+            android:name=".recyclerviewpractice.RecyclerViewEntryActivity"
+            android:theme="@style/CustomNoActionBar" />
         <activity
             android:name=".EntryActivity"
             android:theme="@style/CustomNoActionBar">
@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".progressbarpractice.CircularProgressBarActivity"/>
+        <activity android:name=".progressbarpractice.CircularProgressBarActivity" />
         <activity android:name=".inputfieldspractice.InputFieldsActivity" />
         <activity
             android:name=".dialogpractice.DialogPracticeActivity"
