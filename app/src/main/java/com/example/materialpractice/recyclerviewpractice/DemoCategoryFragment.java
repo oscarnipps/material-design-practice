@@ -23,7 +23,6 @@ public class DemoCategoryFragment extends Fragment {
         FragmentRecyclerViewDemoCategoryBinding binding =
                 DataBindingUtil.inflate(inflater,R.layout.fragment_recycler_view_demo_category,container,false);
 
-
         return binding.getRoot();
     }
 

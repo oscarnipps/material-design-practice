@@ -33,9 +33,9 @@ public class DemoFragmentA extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_demo_a,container,false);
 
-        ItemAdapter adapter = new ItemAdapter(requireContext(), null);
+        AdapterA adapter = new AdapterA(requireContext(), null);
 
-        binding.recyclerViewA.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        //binding.recyclerViewA.setLayoutManager(new LinearLayoutManager(requireActivity()));
 
         binding.recyclerViewA.setAdapter(adapter);
 

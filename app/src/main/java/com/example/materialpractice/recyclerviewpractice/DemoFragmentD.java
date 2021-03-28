@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.materialpractice.R;
-import com.example.materialpractice.databinding.FragmentDemoBBinding;
 import com.example.materialpractice.databinding.FragmentDemoDBinding;
 
 /**
@@ -29,7 +28,7 @@ public class DemoFragmentD extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_demo_d,container,false);
 
-        ItemAdapter adapter = new ItemAdapter(requireContext(), null);
+        AdapterA adapter = new AdapterA(requireContext(), null);
 
         binding.recyclerViewD.setLayoutManager(new LinearLayoutManager(requireActivity()));
 

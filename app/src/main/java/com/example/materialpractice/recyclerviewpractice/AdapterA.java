@@ -8,35 +8,34 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.materialpractice.R;
-import com.example.materialpractice.databinding.AdapterItemBinding;
+import com.example.materialpractice.databinding.ItemABinding;
 import com.example.materialpractice.databindingpractice.Employee;
 
 import java.util.List;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder> {
-    private AdapterItemBinding mBinding;
+public class AdapterA extends RecyclerView.Adapter<AdapterA.ItemViewHolder> {
+    private ItemABinding mBinding;
     private Context mContext;
     public AdapterItemInterface mInterfaceListener;
     private List<Employee> mItems;
     private int expandedPosition = -1;
     private int previousExpandedPosition = -1;
 
-    public ItemAdapter(Context mContext, List<Employee> mItems) {
+    public AdapterA(Context mContext, List<Employee> mItems) {
         this.mContext = mContext;
         //this.mInterfaceListener = mInterfaceListener;
         this.mItems = mItems;
     }
 
     public interface AdapterItemInterface {
-        void onAdapterItemClicked(AdapterItemBinding binding);
+        void onAdapterItemClicked(ItemABinding binding);
     }
 
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        mBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext), R.layout.adapter_item, parent, false);
+        mBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.item_a, parent, false);
         return new ItemViewHolder(mBinding);
     }
 
@@ -44,6 +43,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         //populate the items here but for demo sake do nothing , since the views would be using pre-defined
         //data
+
 
         final boolean isExpanded = position == expandedPosition;
 
@@ -69,10 +69,10 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-        AdapterItemBinding itemBinding;
+        ItemABinding itemBinding;
 
 
-        public ItemViewHolder(@NonNull AdapterItemBinding binding) {
+        public ItemViewHolder(@NonNull ItemABinding binding) {
             super(binding.getRoot());
             this.itemBinding = binding;
             /*itemBinding.scheduleArrowUp.setOnClickListener(v -> mInterfaceListener.onAdapterItemClicked(itemBinding));*/

@@ -11,14 +11,26 @@ import android.view.View;
 
 import com.example.materialpractice.R;
 import com.example.materialpractice.databinding.ActivityRecyclerViewBinding;
-import com.example.materialpractice.databinding.AdapterItemBinding;
 
 public class RecyclerViewEntryActivity extends AppCompatActivity {
     private ActivityRecyclerViewBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_recycler_view);
+
+        setUpDefaultFragment();
+    }
+
+    private void setUpDefaultFragment() {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+        fragmentTransaction.replace(R.id.container,new DemoCategoryFragment());
+
+        fragmentTransaction.addToBackStack(null);
+
+        fragmentTransaction.commit();
     }
 
     public void recyclerViewDemo(View view) {
@@ -46,9 +58,17 @@ public class RecyclerViewEntryActivity extends AppCompatActivity {
 
     private void showFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.container,fragment);
+        fragmentTransaction.replace(R.id.container,fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+            getSupportFragmentManager().popBackStack();
+            return;
+        }
+        finish();
+    }
 }

@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#E10922</color>
+    <color name="colorAccent">#921717</color>
     <color name="practiceItemBackground">#0996D6</color>
     <color name="color_toolbar">#FBFBFB</color>
 </resources>
