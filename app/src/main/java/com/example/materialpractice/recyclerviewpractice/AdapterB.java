@@ -101,7 +101,7 @@ public class AdapterB extends RecyclerView.Adapter<AdapterB.ItemViewHolder> {
 
         if (currentMapItem != null && currentMapItem.getId() == currentProduct.getId()) {
             holder.itemBinding.available.setChecked(true);
-            itemStateArray.put(currentProduct.getId(),true);
+            itemStateArray.put(currentProduct.getId(), true);
             holder.itemBinding.retailPriceTextVal.setText(String.valueOf(currentMapItem.getRetailPrice()));
             holder.itemBinding.facingTextVal.setText(String.valueOf(currentMapItem.getFacing()));
             holder.itemBinding.unitTextVal.setText(String.valueOf(currentMapItem.getCases()));

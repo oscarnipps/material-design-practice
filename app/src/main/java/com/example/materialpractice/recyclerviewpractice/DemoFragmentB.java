@@ -17,6 +17,8 @@ import com.example.materialpractice.R;
 import com.example.materialpractice.databinding.FragmentDemoBBinding;
 import com.example.materialpractice.databinding.ItemBBinding;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +44,7 @@ public class DemoFragmentB extends Fragment implements AdapterB.AdapterItemInter
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_demo_b,container,false);
 
         products = DataLoader.getProducts();
@@ -79,8 +81,6 @@ public class DemoFragmentB extends Fragment implements AdapterB.AdapterItemInter
 
             savedProductsMap.put(product.getId(),product);
         }
-
-       // adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -97,7 +97,6 @@ public class DemoFragmentB extends Fragment implements AdapterB.AdapterItemInter
 
             savedProductsMap.put(product.getId(),product);
         }
-
     }
 
     @Override
